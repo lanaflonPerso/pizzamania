@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pizza } from 'src/models/Pizza';
 
 @Component({
   selector: 'app-fabrique-pizza',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fabrique-pizza.component.css']
 })
 export class FabriquePizzaComponent implements OnInit {
+  currentPizza: Pizza;
+  constructor() {
 
-  constructor() { }
+  }
 
   ngOnInit() {
   }
