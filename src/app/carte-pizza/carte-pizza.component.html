@@ -1,1 +1,31 @@
-<p>carte-pizza works!</p>
+<h4>Carte des Pizza</h4>
+
+<div>
+
+
+  <div *ngIf="isLoading">
+    <img src="assets/spinner.gif" />
+  </div>
+
+  <div *ngIf="!isLoading">
+    <div *ngFor="let pizza of data">
+      <a>{{ pizza.nom }}</a>
+      <img src="{{ pizza.image }}" />
+      <a> Prix : {{ pizza.prix }}</a>
+      <a>Ingrédients</a>
+      <ul>
+        <li *ngIf="pizza.anchois">Anchois</li>
+        <li *ngIf="pizza.jambon">Jambon</li>
+        <li *ngIf="pizza.magret">Magret</li>
+        <li *ngIf="pizza.miel">Miel</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="pizza1" >
+    <a>Zeubi</a>
+    <img src="" />
+    <a href="commande">Selectionner cette pizza</a>
+  </div>
+
+</div>
