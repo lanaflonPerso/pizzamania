@@ -1,4 +1,8 @@
-<h4 class="text-center" >Carte des Pizza</h4>
+
+<div *ngIf="!isLoading" class="text-center mt-3 mb-3">
+    <button class="btn btn-warning">Retour à l'accueil</button>
+</div>
+<h4 class="text-center" >Carte des Pizzas</h4>
 
 <div>
   <!--<div id="spinn" *ngIf="isLoading">-->
@@ -9,8 +13,8 @@
   </div>
 
   <div class="table-responsive">
-    <table *ngIf="!isLoading" class="mx-auto w-75 p-3 table table-sm table-dark text-center">
-      <thead>
+    <table *ngIf="!isLoading" class="mx-auto w-75 p-3 table table-sm text-center table-hover">
+      <thead class="thead-dark">
         <tr>
           <th scope="col">Nom de la pizza</th>
           <th scope="col">Image</th>
