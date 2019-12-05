@@ -1,20 +1,64 @@
-<h4>La fabriqu'à pizza !</h4>
-<p>Ici tu peux sélectionner ta base, ainsi que les ingrédients de ta pizza !</p>
+<div class="text-center">
+  <h4>La fabriqu'à pizza !</h4>
+  <p>Ici tu peux sélectionner ta base, ainsi que les ingrédients de ta pizza !</p>
 
-<form>
-  <a>Base</a><br>
+  <form>
+    <table class="table w-75 p-3 m-auto">
+      <thead class="thead-dark">
+        <tr>
+          <th colspan="2">Quelle base de pizza souhaitez-vous ?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <input type="radio" value="tomate">Tomate (3€)
+          </td>
+          <td>
+            <input type="radio" value="creme">Crème (4€)
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-  <input type="radio" name="base" />Tomates 3€
-  <input type="radio" name="base" />Crème 4€
+    <table class="table w-75 p-3 m-auto">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Sélectionnez vos ingrédients</th>
+            <th scope="col">Prix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input id="anchois" type="checkbox" name="ingredients" /></td>
+            <td><label for="anchois" >Anchois</label></td>
+            <td><label for="anchois" >1€</label></td>
+          </tr>
+          <tr>
+              <td><input id="jambon" type="checkbox" name="ingredients" /></td>
+              <td><label for="jambon" >Jambon</label></td>
+              <td><label for="jambon" >2€</label></td>
+          </tr>
+          <tr>
+              <td><input id="miel" type="checkbox" name="ingredients" /></td>
+              <td><label for="miel" >Miel</label></td>
+              <td><label for="miel" >3€</label></td>
+          </tr>
+          <tr>
+              <td><input id="magret" type="checkbox" name="ingredients" /></td>
+              <td><label for="magret" >Magret</label></td>
+              <td><label for="magert" >4€</label></td>
+          </tr>
+        </tbody>
+      </table>
 
-  <br><a>Ingredients</a><br>
-  <input type="checkbox" name="ingredients" />Anchois 1€
-  <input type="checkbox" name="ingredients" />Jambon 2€
-  <input type="checkbox" name="ingredients" />Miel 3€
-  <input type="checkbox" name="ingredients" />Magret 4€
-
-  <br><a>Prix: _€</a><br>
-
-  <button routerLink="/commande">Commander</button>
-
-</form>
+      <div>
+        <h3 class="text-primary">Prix: _€</h3>
+        <br />
+        <button class="btn btn-success" routerLink="/commande">Commander</button>
+        <br />
+        <button class="btn btn-danger" routerLink="/commande">Annuler ma création</button>
+      </div>
+  </form>
+</div>
