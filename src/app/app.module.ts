@@ -8,6 +8,7 @@ import { CommandeComponent } from './commande/commande.component';
 import { FabriquePizzaComponent } from './fabrique-pizza/fabrique-pizza.component';
 import { FavoritePizzaComponent } from './favorite-pizza/favorite-pizza.component';
 import { CartePizzaComponent } from './carte-pizza/carte-pizza.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CartePizzaComponent } from './carte-pizza/carte-pizza.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
