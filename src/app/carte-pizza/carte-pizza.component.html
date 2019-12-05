@@ -1,31 +1,38 @@
-<h4>Carte des Pizza</h4>
+<h4 class="text-center" >Carte des Pizza</h4>
 
 <div>
-
-
-  <div *ngIf="isLoading">
-    <img src="assets/spinner.gif" />
-  </div>
-
-  <div *ngIf="!isLoading">
-    <div *ngFor="let pizza of data">
-      <a>{{ pizza.nom }}</a>
-      <img src="{{ pizza.image }}" />
-      <a> Prix : {{ pizza.prix }}</a>
-      <a>Ingrédients</a>
-      <ul>
-        <li *ngIf="pizza.anchois">Anchois</li>
-        <li *ngIf="pizza.jambon">Jambon</li>
-        <li *ngIf="pizza.magret">Magret</li>
-        <li *ngIf="pizza.miel">Miel</li>
-      </ul>
+  <!--<div id="spinn" *ngIf="isLoading">-->
+  <div class="row text-center" *ngIf="isLoading">
+    <div class="col">
+     <img src="assets/spinner.gif" />
     </div>
   </div>
 
-  <div id="pizza1" >
-    <a>Zeubi</a>
-    <img src="" />
-    <a href="commande">Selectionner cette pizza</a>
+  <div class="table-responsive">
+    <table *ngIf="!isLoading" class="mx-auto w-75 p-3 table table-sm table-dark text-center">
+      <thead>
+        <tr>
+          <th scope="col">Nom de la pizza</th>
+          <th scope="col">Image</th>
+          <th scope="col">Prix</th>
+          <th scope="col">Ingrédients</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let pizza of data">
+              <th scope="row"><a>{{ pizza.nom }}</a></th>
+              <td><img src="{{ pizza.image }}" /></td>
+              <td>{{ pizza.prix }} €</td>
+              <td>
+                <ul>
+                  <li *ngIf="pizza.anchois">Anchois</li>
+                  <li *ngIf="pizza.jambon">Jambon</li>
+                  <li *ngIf="pizza.magret">Magret</li>
+                  <li *ngIf="pizza.miel">Miel</li>
+                </ul>
+              </td>
+          </tr>
+      </tbody>
+    </table>
   </div>
-
 </div>
