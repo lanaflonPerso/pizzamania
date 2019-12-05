@@ -1,0 +1,13 @@
+footer{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+header{
+    text-align: center;
+}
