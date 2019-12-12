@@ -2,7 +2,7 @@
   <h4>La fabriqu'à pizza !</h4>
   <p>Ici tu peux sélectionner ta base, ainsi que les ingrédients de ta pizza !</p>
 
-<form>
+<form >
 
   <table class="table">
     <thead class="thead-dark">
@@ -18,38 +18,6 @@
     </tbody>
   </table>
 
-  <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Sélectionnez vos ingrédients</th>
-          <th scope="col"></th>
-          <th scope="col">Prix</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><input id="anchois" type="checkbox" name="ingredients" /></td>
-          <td><label for="anchois">Anchois</label></td>
-          <td><label for="anchois">1€</label></td>
-        </tr>
-        <tr>
-            <td><input id="jambon" type="checkbox" name="ingredients" /></td>
-            <td><label for="jambon">Jambon</label></td>
-            <td><label for="jambon">2€</label></td>
-        </tr>
-        <tr>
-            <td><input id="miel" type="checkbox" name="ingredients" /></td>
-            <td><label for="miel">Miel</label></td>
-            <td><label for="miel">3€</label></td>
-        </tr>
-        <tr>
-            <td><input id="magret" type="checkbox" name="ingredients" /></td>
-            <td><label for="magret">Magret</label></td>
-            <td><label for="magert">4€</label></td>
-        </tr>
-      </tbody>
-    </table>
-
     <table class="table w-75 p-3 m-auto">
         <thead class="thead-dark">
           <tr>
@@ -60,32 +28,37 @@
         </thead>
         <tbody>
           <tr>
-            <td><input id="anchois" type="checkbox" name="ingredients" /></td>
+            <td><input id="anchois" type="checkbox" [disabled]="currentPizza.magret" name="anchois"
+                [(ngModel)]="currentPizza.anchois" /></td>
             <td><label for="anchois" >Anchois</label></td>
             <td><label for="anchois" >1€</label></td>
           </tr>
           <tr>
-              <td><input id="jambon" type="checkbox" name="ingredients" /></td>
+              <td><input id="jambon" type="checkbox" name="jambon"
+                [(ngModel)]="currentPizza.jambon" /></td>
               <td><label for="jambon" >Jambon</label></td>
               <td><label for="jambon" >2€</label></td>
           </tr>
           <tr>
-              <td><input id="miel" type="checkbox" name="ingredients" /></td>
+              <td><input id="miel" type="checkbox" name="miel"
+                [(ngModel)]="currentPizza.miel" /></td>
               <td><label for="miel" >Miel</label></td>
               <td><label for="miel" >3€</label></td>
           </tr>
           <tr>
-              <td><input id="magret" type="checkbox" name="ingredients" /></td>
+              <td><input id="magret" type="checkbox" [disabled]="currentPizza.anchois" name="magret"
+                [(ngModel)]="currentPizza.magret" /></td>
               <td><label for="magret" >Magret</label></td>
-              <td><label for="magert" >4€</label></td>
+              <td><label for="magret" >4€</label></td>
           </tr>
         </tbody>
       </table>
 
       <div>
-        <h3 class="text-primary">Prix: _€</h3>
+        <h3 class="text-primary">Prix: {{ currentPizza.getPrix() }}€</h3>
         <br />
-        <button class="btn btn-success" routerLink="/commande">Commander</button>
+        <button class="btn btn-success" name="valider" [disabled]="currentPizza.pizzaValide()" routerLink="/commande">Commander</button>
+        <br />
         <br />
         <button class="btn btn-danger" routerLink="/commande">Annuler ma création</button>
       </div>

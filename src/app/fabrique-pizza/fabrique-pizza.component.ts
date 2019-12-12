@@ -8,7 +8,7 @@ import { Pizza } from 'src/models/Pizza';
 })
 
 export class FabriquePizzaComponent implements OnInit {
-  currentPizza: Pizza;
+  currentPizza = new Pizza();
 
   ngOnInit() {
   }
