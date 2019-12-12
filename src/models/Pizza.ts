@@ -10,6 +10,10 @@ export class Pizza {
 
   constructor() {
     this.base = 'tomate';
+    this.miel = false;
+    this.anchois = false;
+    this.jambon = false;
+    this.magret = false;
   }
 
   public getPrix(): number {
@@ -29,9 +33,4 @@ export class Pizza {
   public pizzaValide(): boolean {
     return !this.anchois && !this.miel && !this.jambon && !this.magret;
   }
-
-  public commanderPizza(): void {
-
-  }
-
 }

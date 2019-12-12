@@ -57,10 +57,10 @@
       <div>
         <h3 class="text-primary">Prix: {{ currentPizza.getPrix() }}€</h3>
         <br />
-        <button class="btn btn-success" name="valider" [disabled]="currentPizza.pizzaValide()" routerLink="/commande">Commander</button>
+        <button class="btn btn-success" name="valider" [disabled]="currentPizza.pizzaValide()" (click)="initCommande()">Commander</button>
         <br />
         <br />
-        <button class="btn btn-danger" routerLink="/commande">Annuler ma création</button>
+        <button class="btn btn-danger" routerLink="">Annuler ma création</button>
       </div>
   </form>
 </div>

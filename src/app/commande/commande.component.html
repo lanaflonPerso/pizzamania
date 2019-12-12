@@ -1,10 +1,7 @@
-<h4>Commande</h4>
 
-<!--Partie à afficher après fabrication-->
-<p>La commande de votre pizza personnalisée est validée.</p>
-<p>Récapitulatif de vos ingrédients choisis :</p>
-{{currentPizza.miel}}
-
-<!--Partie à afficher après commande par carte-->
-<p>La commande de votre/vos pizza est validée</p>
-<p>Récapitulatif des pizzas commandées :</p>
+<div class="text-center">
+    <h4>Votre Commande :</h4>
+    <p>La commande de votre pizza personnalisée est validée.</p>
+    <p>Récapitulatif de vos ingrédients choisis :</p>
+    {{pizza | json}}
+</div>
