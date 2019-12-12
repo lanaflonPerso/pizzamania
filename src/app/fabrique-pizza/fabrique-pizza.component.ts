@@ -6,13 +6,10 @@ import { Pizza } from 'src/models/Pizza';
   templateUrl: './fabrique-pizza.component.html',
   styleUrls: ['./fabrique-pizza.component.css']
 })
+
 export class FabriquePizzaComponent implements OnInit {
   currentPizza: Pizza;
-  constructor() {
-
-  }
 
   ngOnInit() {
   }
-
 }
