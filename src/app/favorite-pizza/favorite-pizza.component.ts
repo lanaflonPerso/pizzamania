@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵload } from '@angular/core';
+import { Pizza } from 'src/models/Pizza';
 
 @Component({
   selector: 'app-favorite-pizza',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritePizzaComponent implements OnInit {
 
-  constructor() { }
+private pizza: Pizza;
 
+constructor(private pizzaFavorieService: PizzaFavoriteService, private commandeAPI: CommanderPizzaAPIService ) { }
+s
   ngOnInit() {
   }
 

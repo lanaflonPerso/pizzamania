@@ -1,1 +1,9 @@
-<p>favorite-pizza works!</p>
+<div *ngIf="pizza" class="piz carre">
+    <h5>Votre dernière pizza commandée</h5>
+    <p>Base : {{pizza.base}}</p>
+    <p *ngIf="pizza.anchois" >Anchois</p>
+    <p *ngIf="pizza.jambon" >Jambon</p>
+    <p *ngIf="pizza.miel" >Miel</p>
+    <p *ngIf="pizza.magret" >Magret</p>
+    <button (click)="commanderPizza()" >Ma pref</button>
+</div>
