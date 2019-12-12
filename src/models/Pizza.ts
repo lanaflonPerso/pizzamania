@@ -29,4 +29,9 @@ export class Pizza {
   public pizzaValide(): boolean {
     return !this.anchois && !this.miel && !this.jambon && !this.magret;
   }
+
+  public commanderPizza(): void {
+
+  }
+
 }
