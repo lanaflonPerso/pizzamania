@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartePizzaService } from '../carte-pizza.service';
 import { Pizza } from 'src/models/Pizza';
+import { Route } from '@angular/compiler/src/core';
+import { AccueilComponent } from '../accueil/accueil.component';
 
 @Component({
   selector: 'app-carte-pizza',
@@ -11,6 +13,7 @@ export class CartePizzaComponent implements OnInit {
 
   data: Pizza[];
   isLoading: boolean;
+  nomPizza: string;
 
   constructor(private carteAPI: CartePizzaService) {
     this.isLoading = true;
@@ -25,7 +28,6 @@ export class CartePizzaComponent implements OnInit {
     });
   }
 
-
   private onSuccess(res: any) {
     this.data = res;
     this.isLoading = false;
@@ -36,4 +38,7 @@ export class CartePizzaComponent implements OnInit {
     this.isLoading = false;
   }
 
+  private selectionPizza(nomPizza) {
+    console.log(nomPizza);
+  }
 }
