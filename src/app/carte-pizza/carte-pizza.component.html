@@ -11,18 +11,19 @@
     </div>
   </div>
 
-  <div class="table-responsive">
-    <table *ngIf="!isLoading" class="mx-auto w-75 p-3 table table-sm text-center table-hover">
+  <div class="table-responsive text-center" *ngIf="!isLoading">
+    <table class="mx-auto w-75 p-3 table table-sm table-hover">
       <thead class="thead-dark">
         <tr>
           <th scope="col">Nom de la pizza</th>
           <th scope="col">Image</th>
           <th scope="col">Prix</th>
           <th scope="col">Ingrédients</th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let pizza of data">
+          <tr *ngFor="let pizza of data" (click)="selectionPizza(pizza)">
               <th scope="row"><a>{{ pizza.nom }}</a></th>
               <td><img src="{{ pizza.image }}" /></td>
               <td>{{ pizza.prix }} €</td>
@@ -34,8 +35,12 @@
                   <li *ngIf="pizza.miel">Miel</li>
                 </ul>
               </td>
+              <td>
+                <input type="number" value="0" />
+              </td>
           </tr>
       </tbody>
     </table>
+    <button class="btn btn-success" routerLink="/commande" >Commander ma sélection</button>
   </div>
 </div>
