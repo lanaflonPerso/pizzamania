@@ -1,11 +1,10 @@
 
 <div *ngIf="!isLoading" class="text-center mt-3 mb-3">
-    <button class="btn btn-warning">Retour à l'accueil</button>
+    <button class="btn btn-warning" routerLink="">Retour à l'accueil</button>
 </div>
 <h4 class="text-center" >Carte des Pizzas</h4>
 
 <div>
-  <!--<div id="spinn" *ngIf="isLoading">-->
   <div class="row text-center" *ngIf="isLoading">
     <div class="col">
      <img src="assets/spinner.gif" />

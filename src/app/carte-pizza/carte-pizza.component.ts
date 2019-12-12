@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartePizzaService } from '../carte-pizza.service';
 import { Pizza } from 'src/models/Pizza';
+import { Route } from '@angular/compiler/src/core';
+import { AccueilComponent } from '../accueil/accueil.component';
 
 @Component({
   selector: 'app-carte-pizza',
@@ -24,7 +26,6 @@ export class CartePizzaComponent implements OnInit {
       this.onError(error);
     });
   }
-
 
   private onSuccess(res: any) {
     this.data = res;
