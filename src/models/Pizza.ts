@@ -7,28 +7,31 @@ export class Pizza {
   jambon: boolean;
   magret: boolean;
   image: string;
-  prix: number;
 
   constructor() {
-    this.prix = 0;
+    this.base = 'tomate';
   }
 
   public getPrix(): number {
-    this.updatePrice();
-    return this.prix;
-  }
-
-  public updatePrice(): void {
     let prix = 0;
 
-    if (this.pate === 'creme') { prix += 4; } else
-    if (this.pate === 'tomate') { prix += 3; }
+    if (this.base === 'creme') { prix += 4; } else
+    if (this.base === 'tomate') { prix += 3; }
 
     if (this.miel) { prix += 3; }
     if (this.anchois) { prix += 1; }
     if (this.jambon) { prix += 2; }
     if (this.magret) { prix += 4; }
 
-    this.prix = prix;
+    return prix;
   }
+
+  public pizzaValide(): boolean {
+    return !this.anchois && !this.miel && !this.jambon && !this.magret;
+  }
+
+  public commanderPizza(): void {
+
+  }
+
 }
