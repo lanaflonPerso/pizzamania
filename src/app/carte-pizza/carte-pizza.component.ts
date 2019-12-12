@@ -3,6 +3,8 @@ import { CartePizzaService } from '../carte-pizza.service';
 import { Pizza } from 'src/models/Pizza';
 import { Route } from '@angular/compiler/src/core';
 import { AccueilComponent } from '../accueil/accueil.component';
+import { PizzaBufferService } from '../pizza-buffer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carte-pizza',
@@ -15,7 +17,7 @@ export class CartePizzaComponent implements OnInit {
   isLoading: boolean;
   nomPizza: string;
 
-  constructor(private carteAPI: CartePizzaService) {
+  constructor(private carteAPI: CartePizzaService, private router: Router, private pizzaBufferService: PizzaBufferService) {
     this.isLoading = true;
   }
 
@@ -38,7 +40,11 @@ export class CartePizzaComponent implements OnInit {
     this.isLoading = false;
   }
 
-  private selectionPizza(nomPizza) {
-    console.log(nomPizza);
+  private selectionPizza(pizza: Pizza) {
+    console.log(pizza);
+    const { nom, miel, anchois, jambon, magret, pate, base } = pizza;
+    const p: Pizza = JSON.parse(JSON.stringify({ nom, miel, anchois, jambon, magret, pate, base }));
+    this.pizzaBufferService.setPizza(p);
+    this.router.navigate(['commande']);
   }
 }

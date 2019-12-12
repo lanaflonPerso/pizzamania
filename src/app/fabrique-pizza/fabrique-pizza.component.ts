@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pizza } from 'src/models/Pizza';
+import { PizzaBufferService } from "../pizza-buffer.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fabrique-pizza',
@@ -8,8 +10,16 @@ import { Pizza } from 'src/models/Pizza';
 })
 
 export class FabriquePizzaComponent implements OnInit {
-  currentPizza = new Pizza();
+  currentPizza: Pizza;
 
+  constructor(private router: Router, private pizzaBufferService: PizzaBufferService) { }
+  
   ngOnInit() {
+    this.currentPizza = new Pizza();
+  }
+
+  public initCommande() {
+    this.pizzaBufferService.setPizza(this.currentPizza);
+    this.router.navigate(['commande']);
   }
 }
