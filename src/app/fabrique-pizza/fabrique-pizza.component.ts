@@ -16,10 +16,12 @@ export class FabriquePizzaComponent implements OnInit {
   
   ngOnInit() {
     this.currentPizza = new Pizza();
+    console.log("Créez la pizza que vous souahitez !");
   }
 
   public initCommande() {
     this.pizzaBufferService.setPizza(this.currentPizza);
+    console.log("Votre pizza est enregistrée. On va sur le récapitualatif de la commande !");
     this.router.navigate(['commande']);
   }
 }
