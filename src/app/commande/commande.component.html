@@ -4,7 +4,8 @@
     <p>La commande de votre pizza personnalisée est validée.</p>
     <p>Récapitulatif de vos ingrédients choisis :</p>
     {{pizza | json}}
-    <br>
-    <a class="btn btn-info" (click)="this.router.navigate(['']);">Retour à l'accueil</a>
-
+    <br />
+    <button class="btn btn-success" routerLink="">Merci - Retour à l'accueil</button>
 </div>
+
+
