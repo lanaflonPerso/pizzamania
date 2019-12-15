@@ -10,6 +10,7 @@ export class AccueilComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("Bienvenue sur le site de PizzaMania");
   }
 
 }

@@ -22,6 +22,7 @@ export class CartePizzaComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("Vous voici sur la carte des pizzas. Sélectionnez celle que vous désirez.")
     this.carteAPI.fetchCarte().subscribe((res) => {
       this.onSuccess(res);
     },
