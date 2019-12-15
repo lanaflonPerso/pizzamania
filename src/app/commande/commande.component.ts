@@ -3,6 +3,7 @@ import { Pizza } from 'src/models/Pizza';
 import { PizzaBufferService } from '../pizza-buffer.service';
 import { CommanderService } from '../commander.service';
 import { Router } from '@angular/router';
+import { HistoriqueService } from '../historique.service';
 
 @Component({
   selector: 'app-commande',
@@ -15,7 +16,7 @@ export class CommandeComponent implements OnInit {
   isLoading: boolean;
 
 
-  constructor(private pizzaBuffer: PizzaBufferService, private commandeAPI: CommanderService, private router : Router) { 
+  constructor(private pizzaBuffer: PizzaBufferService, private commandeAPI: CommanderService, private historique : HistoriqueService , private router : Router) { 
     this.isLoading = false;
   }
 
@@ -31,7 +32,13 @@ export class CommandeComponent implements OnInit {
   }
 
   private onSucces(succes: any) {
+    this.historique.loadHistorique();
     console.log('SUCCESS');
+    const time = new Date();
+    this.pizza['timestamp'] = time;
+    console.log('pizza commander le : ' + time.toISOString());
+    this.historique.appendPizza(this.pizza);
+    this.historique.saveHistorique();
     this.isLoading = false;
   }
 

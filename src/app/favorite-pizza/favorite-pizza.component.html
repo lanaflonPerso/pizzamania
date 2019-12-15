@@ -7,9 +7,17 @@
         <p *ngIf="pizza.miel" >Miel</p>
         <p *ngIf="pizza.magret" >Magret</p>
         <a class="btn btn-success" (click)="commanderPizza()" >Ma pref</a>
+        <hr>
     </div>
     <div *ngIf="!pizza" class="piz carre">
         <h5>Vous n'avez pas de pizza préférée</h5>
         <a class="btn btn-warning" (click)="this.router.navigate([''])" >Retour à l'accueil</a>
+    </div>
+    
+    <div>
+        <h5>Historique</h5>
+        <ul>
+            <li *ngFor="let p of histo">{{ p.base }} {{ p.timestamp }}</li>
+        </ul>
     </div>
 </div>
