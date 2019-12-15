@@ -9,6 +9,10 @@ export class CommanderService {
 
   constructor(private http: HttpClient) {}
   commanderPizza(pizza: Pizza) {
+<<<<<<< HEAD
     return this.http.put('http://localhost:8000/commanderPizza', pizza);
+=======
+    return this.http.put('http://localhost:8000/commande', pizza);
+>>>>>>> pizza fav
   }
 }
